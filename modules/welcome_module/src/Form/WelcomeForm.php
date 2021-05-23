@@ -26,7 +26,7 @@ class WelcomeForm extends FormBase {
 	 for($i = 0, $j = count($roles); $i < $j ; $i++) {
 		echo $roles[$i];
 	}; */
-	$roles = \Drupal::entityTypeManager()->getStorage('user_role')->loadMultiple();
+	$roles = user_role_names();
 	print_r($roles);
 	$form['welcome'] = [
      '#type' => 'select',
