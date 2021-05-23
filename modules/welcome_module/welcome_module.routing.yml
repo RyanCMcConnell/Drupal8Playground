@@ -1,8 +1,16 @@
 welcome_module:
-  path: '/admin/welcome-message'
+  path: '/admin/welcome-test'
   defaults:
     _controller: '\Drupal\welcome_module\Controller\WelcomeController::welcome'
     _title: 'A page for Ryan McConnell to display his skills in Drupal 8'
+  requirements:
+    _permission: 'access content'
+    _role: 'administrator'
+    
+welcome_module.form:
+  path: '/admin/welcome-message'
+  defaults:
+    _form: '\Drupal\welcome_module\Form\WelcomeForm'
   requirements:
     _permission: 'access content'
     _role: 'administrator'

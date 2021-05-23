@@ -16,7 +16,7 @@ class WelcomeController extends ControllerBase {
    */
   public function welcome() {
     return [
-	'#title’ => ‘Hello World!',
+	'#title' => 'Hello World!',
       '#markup' => 'Hello, world',
     ];
   }
