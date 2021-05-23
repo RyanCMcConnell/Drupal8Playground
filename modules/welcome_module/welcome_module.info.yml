@@ -1,0 +1,5 @@
+name: Welcome Module
+description: A module that demonstrates Ryan McConnell's knowledge of Drupal
+package: Custom
+
+type: module
