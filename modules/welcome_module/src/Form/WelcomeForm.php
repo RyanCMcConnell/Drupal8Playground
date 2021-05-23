@@ -22,13 +22,11 @@ class WelcomeForm extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
 	$roles = user_role_names(TRUE);
-	 foreach($roles as $item) {
-    echo $item;
-}
+	 
 	$form['welcome'] = [
      '#type' => 'select',
 	 '#title' => $this->t('Change the Welcome Message for this type of user.'),
-     
+     '#options' => user_role_names(TRUE);,
 	];
 	
 
