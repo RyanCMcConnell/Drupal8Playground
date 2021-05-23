@@ -1,5 +1,6 @@
 name: Welcome Module
 description: A module that demonstrates Ryan McConnell's knowledge of Drupal
 package: Custom
-
 type: module
+version: 1.0
+core: 8.x
