@@ -33,6 +33,7 @@ class WelcomeForm extends FormBase {
 	 '#type' => 'textarea',
 	 '#title' => $this->t('Message'),
 	 '#description' => $this->t('This is the message that will display for the selected user.'),
+	 '#required' => TRUE,
 	 ];
 
     $form['actions']['#type'] = 'actions';
