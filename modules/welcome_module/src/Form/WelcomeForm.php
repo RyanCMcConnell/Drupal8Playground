@@ -21,19 +21,19 @@ class WelcomeForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-	$role_objects = Role::loadMultiple();
+	/* $role_objects = Role::loadMultiple();
     $roles = array_combine(array_keys($role_objects), array_map(function($a){ return $a->label();}, $role_objects));
-	echo $roles[0];
-	/* for($i = 0, $j = count($roles); $i < $j ; $i++) {
+	 for($i = 0, $j = count($roles); $i < $j ; $i++) {
 		echo $roles[$i];
 	}; */
-	/*
-	$form['phone_number'] = [
-     '#type' => 'textfield',
-     '#title' => $this->t($roles[$i]),
+
+	$form['welcome'] = [
+     '#type' => 'select',
+	 '#title' => $this->t('Change the Welcome Message for this type of user.'),
+     '#options' => user_roles(),
 	];
-	}
-*/ 
+	
+
     $form['actions']['#type'] = 'actions';
     $form['actions']['submit'] = [
       '#type' => 'submit',
