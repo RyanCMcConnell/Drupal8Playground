@@ -23,9 +23,10 @@ class WelcomeForm extends FormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
 	$role_objects = Role::loadMultiple();
     $roles = array_combine(array_keys($role_objects), array_map(function($a){ return $a->label();}, $role_objects));
-	for($i = 0, $j = count($roles); $i < $j ; $i++) {
+	echo $roles[0];
+	/* for($i = 0, $j = count($roles); $i < $j ; $i++) {
 		echo $roles[$i];
-	};
+	}; */
 	/*
 	$form['phone_number'] = [
      '#type' => 'textfield',
