@@ -1,7 +1,7 @@
 <?php
 
 namespace Drupal\welcome_module\Form;
-
+use Drupal\user\Entity\Role;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
@@ -14,17 +14,21 @@ class WelcomeForm extends FormBase {
    * {@inheritdoc}
    */
   public function getFormId() {
-    return 'example_form';
+    return 'welcome_form';
   }
 
   /**
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $form['phone_number'] = [
-      '#type' => 'tel',
-      '#title' => $this->t('Your phone number'),
-    ];
+	$roles = Role::loadMultiple();
+	
+	for($i = 0, $j = count($roles); $i < $j ; $i++) {
+	$form['phone_number'] = [
+     '#type' => 'textfield',
+     '#title' => $this->t($roles[i]),
+	];
+}
     $form['actions']['#type'] = 'actions';
     $form['actions']['submit'] = [
       '#type' => 'submit',
