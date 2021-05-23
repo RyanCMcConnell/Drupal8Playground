@@ -24,9 +24,6 @@ class WelcomeForm extends FormBase {
 	$roles = user_role_names(TRUE);
 	 foreach($roles as $item) {
     echo $item;
-
-    // to know what's in $item
-    echo '<pre>'; var_dump($item);
 }
 	$form['welcome'] = [
      '#type' => 'select',
