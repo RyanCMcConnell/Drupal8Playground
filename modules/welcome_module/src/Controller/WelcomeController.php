@@ -6,7 +6,7 @@ use Drupal\Core\Controller\ControllerBase;
 /**
  * Provides route responses for the Example module.
  */
-class ExampleController extends ControllerBase {
+class WelcomeController extends ControllerBase {
 
   /**
    * Returns a simple page.
@@ -16,6 +16,7 @@ class ExampleController extends ControllerBase {
    */
   public function welcomeMessage() {
     return [
+	'#title’ => ‘Hello World!',
       '#markup' => 'Hello, world',
     ];
   }
