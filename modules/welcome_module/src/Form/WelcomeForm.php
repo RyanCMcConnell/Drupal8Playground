@@ -26,7 +26,7 @@ class WelcomeForm extends FormBase {
 	$form['welcome'] = [
      '#type' => 'select',
 	 '#title' => $this->t('Change the Welcome Message for this type of user.'),
-     '#options' => user_role_names(TRUE);,
+     '#options' => user_role_names(TRUE),
 	];
 	
 
