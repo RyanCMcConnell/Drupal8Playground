@@ -27,7 +27,7 @@ class WelcomeForm extends FormBase {
 		echo $roles[$i];
 	}; */
 	$roles = \Drupal::entityTypeManager()->getStorage('user_role')->loadMultiple();
-	echo $roles;
+	print_r($roles);
 	$form['welcome'] = [
      '#type' => 'select',
 	 '#title' => $this->t('Change the Welcome Message for this type of user.'),
