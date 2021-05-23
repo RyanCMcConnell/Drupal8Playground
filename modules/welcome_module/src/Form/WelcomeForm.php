@@ -21,8 +21,8 @@ class WelcomeForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-	$roles = user_role_names();
-	
+	$role_objects = Role::loadMultiple();
+    $roles = array_combine(array_keys($role_objects), array_map(function($a){ return $a->label();}, $role_objects));
 	for($i = 0, $j = count($roles); $i < $j ; $i++) {
 		echo $roles[$i];
 	};
