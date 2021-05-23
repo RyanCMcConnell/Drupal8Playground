@@ -14,7 +14,7 @@ class WelcomeController extends ControllerBase {
    * @return array
    *   A simple renderable array.
    */
-  public function welcomeMessage() {
+  public function welcome() {
     return [
 	'#title’ => ‘Hello World!',
       '#markup' => 'Hello, world',
