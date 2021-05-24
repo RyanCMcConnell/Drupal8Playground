@@ -7,11 +7,12 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Session\AccountInterface;
 
 /**
- * Provides a block with a simple text.
+ * Provides a 'Hello' Block.
  *
  * @Block(
- *   id = "my_block_example_block",
- *   admin_label = @Translation("My block"),
+ *   id = "welcome_block",
+ *   admin_label = @Translation("Welcome block"),
+ *   category = @Translation("Welcome!"),
  * )
  */
 class WelcomeBlock extends BlockBase {
