@@ -27,7 +27,7 @@ class WelcomeForm extends FormBase {
 	 '#title' => $this->t('Message'),
 	 '#description' => $this->t('Choose a custom welcome message for all users with the "See welcome message" permission.'),
 	 '#required' => TRUE,
-	 '#default_value' => \Drupal::state()->get('welcome_message'),
+	 '#default_value' => \Drupal::state()->get('welcome_message_set'),
 	 ];
 
     $form['actions']['#type'] = 'actions';
