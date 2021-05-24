@@ -23,7 +23,8 @@ class WelcomeBlock extends BlockBase {
 	if (\Drupal::currentUser()->hasPermission('see welcome message')) {
 		
     return [
-      '#markup' => $this->t('<style>#block-welcomeblock {background-color:#f5f0a8; }</style><p>You should only see this if you have permission.</p>'),
+	$welcome = \Drupal::state()->get('welcome_message'); 
+      '#markup' => $this->t('<style>#block-welcomeblock {background-color:#f5f0a8; }</style><p>' . $welcome . '</p>'),
     ];
 	}
   }
