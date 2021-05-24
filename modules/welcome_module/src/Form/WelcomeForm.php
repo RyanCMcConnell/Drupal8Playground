@@ -53,7 +53,7 @@ class WelcomeForm extends FormBase {
     
   \Drupal::state()->set('welcome_message_set', $form_state->getValue('welcome_message'));
  $this->messenger()->addStatus($this->t('Thank you! The new custom welcome message for those with permissions is the following: @message', ['@message' => $form_state->getValue('welcome_message')]));
- 
+ drupal_flush_all_caches();
 
 }
 

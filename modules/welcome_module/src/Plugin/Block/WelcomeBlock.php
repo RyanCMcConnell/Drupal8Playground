@@ -22,7 +22,7 @@ class WelcomeBlock extends BlockBase {
   public function build() {
 	if (\Drupal::currentUser()->hasPermission('see welcome message')) {
 	$welcome = \Drupal::state()->get('welcome_message_set'); 
-	\Drupal::messenger()->addStatus($welcome, TRUE);
+	\Drupal::messenger()->addStatus($welcome);
 	}
   }
 
