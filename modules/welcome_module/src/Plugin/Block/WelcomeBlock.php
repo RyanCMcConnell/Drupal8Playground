@@ -24,7 +24,7 @@ class WelcomeBlock extends BlockBase {
 	$welcome = \Drupal::state()->get('welcome_message_set'); 
     return [
 	
-      '#markup' => $this->t('<style>#block-welcomeblock {background-color:#f5f0a8; }</style><p>' . $welcome . '</p>'),
+      \Drupal::messenger()->addStatus($welcome),
     ];
 	}
   }
