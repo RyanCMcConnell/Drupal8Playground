@@ -21,18 +21,11 @@ class WelcomeForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-	 
-	$form['welcome-user'] = [
-     '#type' => 'select',
-	 '#title' => $this->t('User type'),
-	 '#description' => $this->t('Change the welcome message for this type of user'),
-     '#options' => user_role_names(TRUE),
-	];
 	
 	$form['welcome-message'] = [
 	 '#type' => 'textarea',
 	 '#title' => $this->t('Message'),
-	 '#description' => $this->t('This is the message that will display for the selected user.'),
+	 '#description' => $this->t('Choose a custom welcome message for all users with the "See welcome message" permission.'),
 	 '#required' => TRUE,
 	 ];
 
