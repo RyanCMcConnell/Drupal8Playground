@@ -32,4 +32,3 @@ class WelcomeBlock extends BlockBase {
   }
 
 }
-?>

@@ -60,4 +60,3 @@ class WelcomeForm extends FormBase {
 
 }
 
-?>
