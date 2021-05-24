@@ -21,7 +21,7 @@ class WelcomeBlock extends BlockBase {
    */
   public function build() {
     return [
-      '#markup' => $this->t('This is a simple block!'),
+      '#markup' => $this->t('<h2>Welcome!</h2>'),
     ];
   }
 
