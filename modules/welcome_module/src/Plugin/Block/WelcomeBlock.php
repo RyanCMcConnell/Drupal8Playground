@@ -20,9 +20,15 @@ class WelcomeBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
+	  $config = $this->getConfiguration();
+	$current_user = \Drupal::currentUser();
+	$roles = $current_user->getRoles();
+	if (in_array("administrator", $roles)) {
+		
     return [
-      '#markup' => $this->t('<h2>Welcome!</h2>'),
+      '#markup' => $this->t('<style>#block-welcomeblock {background-color:#f5f0a8; }</style><p>You should only see this as an admin.</p>'),
     ];
+	}
   }
 
   /**
