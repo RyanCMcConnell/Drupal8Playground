@@ -51,7 +51,7 @@ class WelcomeForm extends FormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     
-  \Drupal::state()->set('welcome_message_set', $form_state['values']['welcome_message']);
+  \Drupal::state()->set('welcome_message_set', $form_state->getValue('welcome_message'));
  $this->messenger()->addStatus($this->t('Thank you! The new custom welcome message for those with permissions is the following: @message', ['@message' => $form_state->getValue('welcome_message')]));
 
 }
