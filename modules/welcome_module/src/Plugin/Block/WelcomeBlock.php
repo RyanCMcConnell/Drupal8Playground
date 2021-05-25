@@ -19,12 +19,40 @@ class WelcomeBlock extends BlockBase {
   /**
    * {@inheritdoc}
    */
-  public function build() {
-	if (\Drupal::currentUser()->hasPermission('see welcome message')) {
-	$welcome = \Drupal::state()->get('welcome_message_set'); 
-	\Drupal::messenger()->addStatus($welcome);
+   public function build() {
+	   if (isset(\Drupal::state()->get('select_answered')) {
+		   echo ('<p>' . \Drupal::state()->get('select_answered') . '</p>');
+	   }
+	   
+   }
+   
+    public function blockForm(array $form, FormStateInterface $form_state) {
+	if (\Drupal::currentUser()->isAuthenticated()) {
+	$form['select_answer'] = [
+	 '#type' => 'select',
+	 '#title' => $this->t('Select one'),
+	 '#description' => $this->t('What is your favorite fruit?'),
+	 '#required' => TRUE,
+	 ];
+
+    $form['actions']['#type'] = 'actions';
+    $form['actions']['submit'] = [
+      '#type' => 'submit',
+      '#value' => $this->t('Submit'),
+      '#button_type' => 'primary',
+    ];
+    return $form;
 	}
   }
+
+public function submitForm(array &$form, FormStateInterface $form_state) {
+    
+  \Drupal::state()->set('select_answered', $form_state->getValue('select_answer'));
+ $this->messenger()->addStatus($this->t('Thank you! You submitted the following: @message', ['@message' => $form_state->getValue('select_answer')]));
+ drupal_flush_all_caches();
+
+}
+
 
   /**
    * {@inheritdoc}
